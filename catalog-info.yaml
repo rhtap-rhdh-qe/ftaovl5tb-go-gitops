@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: ftaovl5tb-go-gitops
+  description: This is GitOps manifest for ftaovl5tb-go   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: ftaovl5tb-go
+    janus-idp.io/tekton: ftaovl5tb-go 
+    backstage.io/kubernetes-id: ftaovl5tb-go 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:ftaovl5tb-go
